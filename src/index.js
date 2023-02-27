@@ -7,6 +7,7 @@ import Page from './component/pg';
 import AdminPage from './component/adminpanel';
 import Adminfunction from './component/adminfun';
 import Deleteblogs from './component/deleteblog'
+import Login from './component/login'
 function Main()
 {
   return (
@@ -20,6 +21,7 @@ function Main()
            <Route path="/admin" element={<AdminPage/>}/>
            <Route path="/add/data" element={<Adminfunction/>}/>
            <Route path="/delete" element={<Deleteblogs/>}/>
+           <Route path="/log" element={<Login></Login>}/>
         </Routes>
     </Router>
     </section>

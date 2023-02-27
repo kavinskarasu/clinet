@@ -9,7 +9,7 @@ export default function Page()
     useEffect(() => {
         async function fetchData()
         {
-          const url = `http://localhost:7000/blogs/${id}`;
+          const url = `https://blog-crawler.onrender.com/blogs/${id}`;
           const res = await axios.get(url);
           setBlog(res.data);
           console.log(res.data);

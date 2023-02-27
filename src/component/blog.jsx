@@ -1,6 +1,7 @@
 import  axios  from "axios";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+
 export default function BlogPage()
 {
     const [blog, setBlog] = useState([]);
@@ -8,7 +9,7 @@ export default function BlogPage()
     useEffect(() => {
       async function fetchData()
       {
-        const url = `http://localhost:7000/blogs/`;
+        const url = `https://blog-crawler.onrender.com/blogs`;
         const res = await axios.get(url);
         setBlog(res.data);
       }
@@ -19,6 +20,7 @@ export default function BlogPage()
     return (
         <section>
         
+
 
             
             {blog.map((item, k) => {
