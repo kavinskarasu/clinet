@@ -1,11 +1,12 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import BlogPage from './component/blog';
-import Tags from './component/tags';
+import Content from './component/content'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Page from './component/pg';
-import AdminPage from './component/admin';
-
+import AdminPage from './component/adminpanel';
+import Adminfunction from './component/adminfun';
+import Deleteblogs from './component/deleteblog'
 function Main()
 {
   return (
@@ -15,6 +16,10 @@ function Main()
            <Route path='/' element={<BlogPage />} />
            <Route path='/page/:tag' element={<Page />} />
            <Route path='/login' element={<AdminPage/>} />
+           <Route path="/next/:id" element={<Content/>}/>
+           <Route path="/admin" element={<AdminPage/>}/>
+           <Route path="/add/data" element={<Adminfunction/>}/>
+           <Route path="/delete" element={<Deleteblogs/>}/>
         </Routes>
     </Router>
     </section>

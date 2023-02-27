@@ -22,11 +22,17 @@ export default function Page()
             {blog.map((item, k) => {
                 return(
             <section key={k}>
-                <h3>{item.title}</h3>
-                <p className="">{item.description}</p>
-                <p>{item.author}</p>
-                <p>{item.categories}</p>
-                <p>{item.time}</p>
+                <div class="card">
+  <h5 class="card-header btn-dark">{item.title}</h5>
+  
+  <div class="card-body">
+    <h5 class="btn btn-success">{item.author}</h5>
+    <p class="card-text">{item.description}</p>
+    <p class="btn btn-primary">{item.categories}</p>
+   <br></br>
+    <p class="btn btn-warning">{item.time}</p>
+  </div>
+</div>
             </section>
                 )
             })}
