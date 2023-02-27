@@ -1,5 +1,6 @@
 import  axios  from "axios";
 import { useState, useEffect } from "react";
+import Tags from "./tags";
 
 export default function BlogPage()
 {
@@ -18,6 +19,7 @@ export default function BlogPage()
     
     return (
         <section>
+            <Tags />
             {blog.map((item, k) => {
                 return(
             <section key={k}>

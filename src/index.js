@@ -4,20 +4,20 @@ import BlogPage from './component/blog';
 import Tags from './component/tags';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Page from './component/pg';
+import AdminPage from './component/admin';
 
 function Main()
 {
   return (
-    <>
-    <Tags />
+    <section>
     <Router>
         <Routes>
            <Route path='/' element={<BlogPage />} />
-           <Route path='/page' element={<Page />} />
+           <Route path='/page/:tag' element={<Page />} />
+           <Route path='/login' element={<AdminPage/>} />
         </Routes>
     </Router>
-    <BlogPage />
-    </>
+    </section>
   )
 }
 
