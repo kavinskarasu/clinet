@@ -28,7 +28,7 @@ export default function BlogPage()
             <section key={k}>
                <div class="card">
        
-        <NavLink to={`http://localhost:3000/next/${item.id}`}><h3> {item.title} </h3></NavLink>
+        <NavLink to={`/next/${item.id}`}><h3> {item.title} </h3></NavLink>
        
         
      
