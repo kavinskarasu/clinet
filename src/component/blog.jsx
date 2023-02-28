@@ -36,7 +36,7 @@ export default function BlogPage()
     <div class="card-body">
     <h5 class="btn btn-success">{item.author}</h5>
    <br></br>
-   <NavLink to={`http://localhost:3000/page/${item.categories}`}><p class="btn btn-primary">{item.categories}</p></NavLink>
+   <NavLink to={`/page/${item.categories}`}><p class="btn btn-primary">{item.categories}</p></NavLink>
    <br></br>
     <p class="btn btn-warning">{item.time}</p>
   </div>
