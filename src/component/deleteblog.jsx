@@ -6,7 +6,7 @@ export default function Admin(){
    
     async function PostData()
     {
-        const url = `http://localhost:7000/blogs/${val}`;
+        const url = `https://blog-crawler.onrender.com/blogs/${val}`;
        
         const res = await axios.delete(url);
         console.log(res.data);

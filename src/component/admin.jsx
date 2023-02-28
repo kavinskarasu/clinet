@@ -11,7 +11,7 @@ export default function AdminPage()
     
     async function PostData()
     {
-        const url = `http://localhost:7000/blogs`;
+        const url = `https://blog-crawler.onrender.com/blogs`;
         const res = await axios.post(url, { "url": val});
         console.log(res.data);
     }
