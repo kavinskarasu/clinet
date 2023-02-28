@@ -19,9 +19,7 @@ export default function BlogPage()
     
     return (
         <section>
-        
-
-
+            <h1 className="p-4 sticky-top shadow-lg bg-black text-white text-center">Blogs</h1>
             
             {blog.map((item, k) => {
                 return(

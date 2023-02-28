@@ -1,32 +1,23 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
     const login = async () => {
-      const response = await fetch("https://blog-crawler.onrender.com/admin/", {
-        method: "POST",
-        body: JSON.stringify({ username, password })
-      });
-      const result = await response.json();
-      localStorage.setItem(
-        "login",
-        JSON.stringify({ login: true, token: result.token })
-      );
-    };
-    login();
-  }, [username, password]);
+      const response = await axios.post("https://blog-crawler.onrender.com/admin/", {
+        "username": username,
+        "password":password
+    })
+    localStorage.setItem("token", JSON.stringify(response.data));
+    window.location.reload();
+  }
+    
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    // Handle form submission
-  };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">UserNmae</label>
           <input
@@ -47,10 +38,9 @@ export default function Login() {
             placeholder="Password"
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" onClick={() => login()}>
           Submit
         </button>
-      </form>
     </div>
   );
 }
